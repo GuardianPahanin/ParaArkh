@@ -1,0 +1,65 @@
+<%- include('../partials/header.ejs'); %>
+
+<body>
+    <main>
+        
+        <h2>Edit Event</h2>
+            
+    
+            <form method="POST" action="/event/<%= event.id %>?_method=PUT" class="new-form" enctype="multipart/form-data">
+        
+                <label for="category">Category:</label>
+                <select name="category" id="category" required>
+                    <option value="" disabled>Select your option</option>
+                    <option value="Model Tutorial Class" <%= event.category === "Model Tutorial Class" ? "selected" : "" %>>Model Tutorial Class</option>
+                    <option value="Design Charrettes" <%= event.category === "Design Charrettes" ? "selected" : "" %>>Design Charrettes</option>
+                    <option value="Sustainable Design" <%= event.category === "Sustainable Design" ? "selected" : "" %>>Sustainable Design</option>
+                    <option value="Computational Thinking" <%= event.category === "Computational Thinking" ? "selected" : "" %>>Computational Thinking</option>
+                    <option value="Innovative Research" <%= event.category === "Innovative Research" ? "selected" : "" %>>Innovative Research</option>
+                </select><br><br>
+
+                <label for="topic">Topic:</label>
+                <select name="topic" id="topic" required>
+                    <option value="" disabled>Select your option</option>
+                    <option value="3D Printing" <%= event.topic === "3D Printing" ? "selected" : "" %>>3D Printing</option>
+                    <option value="Laser Cutting" <%= event.topic === "Laser Cutting" ? "selected" : "" %>>Laser Cutting</option>
+                    <option value="Woodworking" <%= event.topic === "Woodworking" ? "selected" : "" %>>Woodworking</option>
+                    <option value="Metalworking" <%= event.topic === "Metalworking" ? "selected" : "" %>>Metalworking</option>
+                    <option value="Electronics" <%= event.topic === "Electronics" ? "selected" : "" %>>Electronics</option>
+                    <option value="Sewing" <%= event.topic === "Sewing" ? "selected" : "" %>>Sewing</option>
+                    <option value="Coding" <%= event.topic === "Coding" ? "selected" : "" %>>Coding</option>
+                    <option value="Other" <%= event.topic === "Other" ? "selected" : "" %>>Other</option>
+                </select><br><br>
+
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" placeholder="title" value="<%= event.title %>" required><br><br>
+
+                <label for="where">Where:</label>
+                <input type="text" id="where" name="where" placeholder="Enter the location of your Event" value="<%= event.where %>" required><br><br>
+
+                <label for="startTime">Start:</label>
+                <input type="datetime-local" id="startTime" name="startTime" value="<%= event.startTime %>" required><br><br>
+
+                <label for="endTime">End:</label>
+                <input type="datetime-local" id="endTime" name="endTime" value="<%= event.endTime %>" required><br><br>
+
+                <label for="details">Details:</label>
+                <textarea name="details" id="details" required> "<%= event.details %>"</textarea>  <br><br>
+
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image" value= "<%= event.image %>" required><br><br>
+
+                <input type="submit" value="Submit">   
+            
+            </form>
+
+        </div>
+
+    </main>
+</body>
+
+
+
+
+
+<%- include('../partials/footer.ejs') %>

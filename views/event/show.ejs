@@ -1,0 +1,47 @@
+<%- include('../partials/header.ejs') %>
+
+
+<body>
+
+    <main>
+
+        <nav class = "eventHeader">
+            <h2><%= event.title %></h2>
+            <h3>Posted <%= event.createdAt%> by <%= event.hostName.firstName + ' ' + event.hostName.lastName%></h3>
+            <% console.log(event.hostName); %>
+            <%if(user == event.hostName._id){%>
+                <form>
+                    <button type = "submit" formmethod = "GET" formaction = "/event/<%= event.id%>/edit">Edit</button>
+                <form>
+
+                <form>
+                    <button type = "submit" formmethod = "POST" formaction = "/event/<%= event.id%>?_method=DELETE">Delete</button>
+                </form>
+            <%}%>
+        </nav>
+        
+        
+        <nav class="event-des">
+
+        
+            <img src="<%= event.image %>" alt = "Event Image">
+            
+            <ul>
+                <li><strong>Topic: </strong> <%= event.topic %></li>
+                <li><strong>Category: </strong> <%= event.category %></li>
+                <li><strong>Start Time: </strong> <%= event.startTime %></li>
+                <li><strong>End Time: </strong> <%= event.endTime %></li>
+                <li><strong>Where: </strong> <%= event.where %></li>
+                <li><strong>Details: </strong> <%= event.details %></li>
+
+            </ul>
+        </nav>
+
+    </main>
+
+    
+</body>
+
+
+
+<%- include('../partials/footer.ejs') %>

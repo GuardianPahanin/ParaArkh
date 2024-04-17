@@ -1,0 +1,62 @@
+<%- include('../partials/header.ejs') %>
+
+<body>
+
+    <main>
+        <form class="form" action="/event" method="POST" enctype="multipart/form-data">
+           
+            <h2>Create Event</h2>
+
+            <div class="form__item">
+
+                <label for="category">Category:</label>
+                <select name="category" id="category" required>
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="Model Tutorial Class">Model Tutorial Class</option>
+                    <option value="Design Charrettes">Design Charrettes</option>
+                    <option value="Sustainable Design">Sustainable Design</option>
+                    <option value="Computational Thinking">Computational Thinking</option>
+                    <option value="Innovative Research">Innovative Research</option>
+                </select><br><br>
+
+                <label for="topic">Topic:</label>
+                <select name="topic" id="topic" required>
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="3D Printing">3D Printing</option>
+                    <option value="Laser Cutting">Laser Cutting</option>
+                    <option value="Woodworking">Woodworking</option>
+                    <option value="Metalworking">Metalworking</option>
+                    <option value="Electronics">Model Tutorial Class</option>
+                    <option value="Sewing">Sewing</option>
+                    <option value="Coding">Coding</option>
+                    <option value="Other">Other</option>
+                </select><br><br>
+
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" placeholder="title" required><br><br>
+
+                <label for="where">Where:</label>
+                <input type="text" id="where" name="where" placeholder="Enter the location of your Event" required><br><br>
+
+                <label for="startTime">Start:</label>
+                <input type="datetime-local" id="startTime" name="startTime" required><br><br>
+
+                <label for="endTime">End:</label>
+                <input type="datetime-local" id="endTime" name="endTime" required><br><br>
+
+                <label for="details">Details:</label>
+                <textarea name="details" id="details" required></textarea>  <br><br>
+                
+                <br><br>
+
+                <label for="image">Image</label>
+                <input type="file" id="image" name="image" required><br><br>
+
+                <input type="submit" value="Create Event">
+            </div>
+        </form>
+    </main>
+</body>
+
+
+<%- include('../partials/footer.ejs') %>

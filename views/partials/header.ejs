@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>My Web Page</title>
+</head>
+<header>
+    <!-- Color for logo  #525843-->
+    <a href="/"><img src="/images/Logo1(Green).png" alt="UNCC-Logo"></a>
+    
+   
+    
+
+
+    <%if(!user){%>
+        <button class="button-Login" type = "button">
+            <a href="/users/login">Login</a>
+        </button>
+
+        <button class="button-Sign-Up" type = "button">
+            <a href="/users/new">SignUp</a>
+        </button>
+    <%}else{%>
+        <nav class = "newEvent">
+            <a href="/event/new">New Event</a>
+        </nav>
+        
+        <button class="button-Profile" type = "button">
+            <a href="/users/profile">Profile</a>
+        </button>
+
+        <button class="button-Logout" type = "button">
+            <a href="/users/logout">Logout</a>
+        </button>
+    <%}%>
+    
+</header>
+
+<!--  warning becarful with this not sure if it will get messed up becuase it was originally in the body section and not with the header-->
+<nav class = "navbar">
+    <ul>
+        <li><a href = "/">Home</a></li>
+        <li><a href = "/event">Events</a></li>
+    </ul>
+</nav>
+
+<% if(errorMessages.length > 0) {%>
+    <% errorMessages.forEach(message=>{%>
+        <div class='error'>
+            <%=message%>
+        </div>
+    <%});%>
+<%}%>
+
+<% if(successMessages.length > 0) {%>
+
+    <% successMessages.forEach(message=>{%>
+        <div class='success'>
+            <%=message%>
+        </div>
+    <%});%>
+<%}%>

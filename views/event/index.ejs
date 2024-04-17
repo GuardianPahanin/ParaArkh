@@ -1,0 +1,108 @@
+<%- include('../partials/header.ejs') %>
+
+
+
+<body>
+    
+    <main>
+        <nav class="events-list">
+            <% const modelEvents = events.filter(event => event.category === "Model Tutorial Class"); %>
+            <% const charrettesEvents = events.filter(event => event.category === "Design Charrettes"); %>
+            <% const sustainableDesignEvents = events.filter(event => event.category === "Sustainable Design"); %>
+            <% const computationalThinkingEvents = events.filter(event => event.category === "Computational Thinking"); %>
+            <% const innovativeResearchEvents = events.filter(event => event.category === "Innovative Research"); %>
+            
+            <% if(modelEvents.length > 0 || charrettesEvents.length > 0 || sustainableDesignEvents.length > 0 || computationalThinkingEvents.length > 0 || innovativeResearchEvents.length > 0) { %>
+            
+                <% if(modelEvents.length > 0) { %>
+                    <h2>Model Tutorial Class</h2>
+                    <% modelEvents.forEach(event => { %>
+                        <ul>
+                            <li><strong>Title:</strong> <a href="/event/<%= event.id %>"><%= event.title %></a></li>
+                            <li><strong>Topic:</strong> <%= event.topic %></li>
+                            <li><strong>Host:</strong> <%= event.hostName.firstName + ' ' + event.hostName.lastName %></li>
+                            <li><strong>Where:</strong> <%= event.where %></li>
+                            <% const formattedStartTime = new Date(event.startTime).toLocaleString('en-US', { day: 'numeric', month: 'short', hour: 'numeric', minute: 'numeric', hour12: true }); %>
+                            <li><strong>Start:</strong> <%= formattedStartTime %></li>
+                            <% const formattedEndTime = new Date(event.endTime).toLocaleString('en-US', { day: 'numeric', month: 'short', hour: 'numeric', minute: 'numeric', hour12: true }); %>
+                            <li><strong>End:</strong> <%= formattedEndTime %></li>
+                        </ul>
+                    <% }); %>
+                <% } %>
+                
+                <% if(charrettesEvents.length > 0) { %>
+                    <h2>Design Charrettes</h2>
+                    <% charrettesEvents.forEach(event => { %>
+                        <ul>
+                            <li><strong>Title:</strong> <a href="/event/<%= event.id %>"><%= event.title %></a></li>
+                            <li><strong>Topic:</strong> <%= event.topic %></li>
+                            <li><strong>Host:</strong> <%= event.hostName.firstName + ' ' + event.hostName.lastName %></li>
+                            <li><strong>Where:</strong> <%= event.where %></li>
+                            <% const formattedStartTime = new Date(event.startTime).toLocaleString('en-US', { day: 'numeric', month: 'short', hour: 'numeric', minute: 'numeric', hour12: true }); %>
+                            <li><strong>Start:</strong> <%= formattedStartTime %></li>
+                            <% const formattedEndTime = new Date(event.endTime).toLocaleString('en-US', { day: 'numeric', month: 'short', hour: 'numeric', minute: 'numeric', hour12: true }); %>
+                            <li><strong>End:</strong> <%= formattedEndTime %></li>
+                        </ul>
+                    <% }); %>
+                <% } %>
+                
+                <% if(sustainableDesignEvents.length > 0) { %>
+                    <h2>Sustainable Design</h2>
+                    <% sustainableDesignEvents.forEach(event => { %>
+                        <ul>
+                            <li><strong>Title:</strong> <a href="/event/<%= event.id %>"><%= event.title %></a></li>
+                            <li><strong>Topic:</strong> <%= event.topic %></li>
+                            <li><strong>Host:</strong> <%= event.hostName.firstName + ' ' + event.hostName.lastName %></li>
+                            <li><strong>Where:</strong> <%= event.where %></li>
+                            <% const formattedStartTime = new Date(event.startTime).toLocaleString('en-US', { day: 'numeric', month: 'short', hour: 'numeric', minute: 'numeric', hour12: true }); %>
+                            <li><strong>Start:</strong> <%= formattedStartTime %></li>
+                            <% const formattedEndTime = new Date(event.endTime).toLocaleString('en-US', { day: 'numeric', month: 'short', hour: 'numeric', minute: 'numeric', hour12: true }); %>
+                            <li><strong>End:</strong> <%= formattedEndTime %></li>
+                        </ul>
+                    <% }); %>
+                <% } %>
+                
+                <% if(computationalThinkingEvents.length > 0) { %>
+                    <h2>Computational Thinking</h2>
+                    <% computationalThinkingEvents.forEach(event => { %>
+                        <ul>
+                            <li><strong>Title:</strong> <a href="/event/<%= event.id %>"><%= event.title %></a></li>
+                            <li><strong>Topic:</strong> <%= event.topic %></li>
+                            <li><strong>Host:</strong> <%= event.hostName.firstName + ' ' + event.hostName.lastName %></li>
+                            <li><strong>Where:</strong> <%= event.where %></li>
+                            <% const formattedStartTime = new Date(event.startTime).toLocaleString('en-US', { day: 'numeric', month: 'short', hour: 'numeric', minute: 'numeric', hour12: true }); %>
+                            <li><strong>Start:</strong> <%= formattedStartTime %></li>
+                            <% const formattedEndTime = new Date(event.endTime).toLocaleString('en-US', { day: 'numeric', month: 'short', hour: 'numeric', minute: 'numeric', hour12: true }); %>
+                            <li><strong>End:</strong> <%= formattedEndTime %></li>
+                        </ul>
+                    <% }); %>
+                <% } %>
+            
+                <% if(innovativeResearchEvents.length > 0) { %>
+                    <h2>Innovative Research</h2>
+                    <% innovativeResearchEvents.forEach(event => { %>
+                        <ul>
+                            <li><strong>Title:</strong> <a href="/event/<%= event.id %>"><%= event.title %></a></li>
+                            <li><strong>Topic:</strong> <%= event.topic %></li>
+                            <li><strong>Host:</strong> <%= event.hostName.firstName + ' ' + event.hostName.lastName %></li>
+                            <li><strong>Where:</strong> <%= event.where %></li>
+                            <% const formattedStartTime = new Date(event.startTime).toLocaleString('en-US', { day: 'numeric', month: 'short', hour: 'numeric', minute: 'numeric', hour12: true }); %>
+                            <li><strong>Start:</strong> <%= formattedStartTime %></li>
+                            <% const formattedEndTime = new Date(event.endTime).toLocaleString('en-US', { day: 'numeric', month: 'short', hour: 'numeric', minute: 'numeric', hour12: true }); %>
+                            <li><strong>End:</strong> <%= formattedEndTime %></li>
+                        </ul>
+                    <% }); %>
+                <% } %>
+            
+            <% } else { %>
+                <p>No events yet. Go to the new event page to create one</p>
+            <% } %>
+        </nav>
+       
+    </main>
+    
+</body>
+
+
+
+<%- include('../partials/footer.ejs') %>
